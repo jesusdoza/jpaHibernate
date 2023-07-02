@@ -1,13 +1,23 @@
 package com.springboot.jpahibernate.course;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity(name = "Course")
 public class Course {
 
-
+    @Id
     private long id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "author")
     private String author;
 
+    //default not args constructor for bean standard
     public Course() {
     }
 

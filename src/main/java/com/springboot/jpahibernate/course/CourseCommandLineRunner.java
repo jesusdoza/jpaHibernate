@@ -17,11 +17,15 @@ public class CourseCommandLineRunner implements CommandLineRunner {
         repository.save(new Course(10, "JPA new course for test template", "joe"));
         repository.save(new Course(102, "JPA TOM DID THIS", "tom"));
         repository.save(new Course(103, "JPA TOM DID THIS again", "tom"));
+        repository.save(new Course(104, "JPA TOM DID THIS again", "tom"));
+        repository.save(new Course(105, "JPA TOM DID THIS again", "tom"));
 
         repository.deleteById(102L);
 
         System.out.println(repository.findById(10L));
         System.out.println(repository.findById(103L));
+        System.out.println(repository.findByAuthor("tom"));
+        System.out.println(repository.findByAuthor(""));
 
 
     }
